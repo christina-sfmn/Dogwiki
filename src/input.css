@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.group-container,
+.breed-container {
+  @apply grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 cursor-pointer;
+}
+
+.group-card,
+.breed-card {
+  @apply relative bg-white  hover:bg-gray-200 hover:transition-all p-6 rounded-lg shadow h-40;
+}
+
+.group-card h3,
+.breed-card h3 {
+  @apply text-blue text-xl font-semibold w-40;
+}
+
+.group-card img,
+.breed-card img {
+  @apply absolute bottom-0 right-0 w-28;
+}
+
+.highlight {
+  @apply text-aqua;
+}
+
+.dog p {
+  @apply text-white text-lg font-medium mb-3;
+}
+
+#btnBack {
+  @apply md:absolute relative md:top-60 md:left-0 ring-1 bg-white hover:bg-aqua hover:transition-all font-semibold rounded shadow px-4 py-2 mt-6;
+}
+
+#btnRandom {
+  @apply md:absolute relative md:top-60 md:right-0 ring-1 bg-white hover:bg-aqua hover:transition-all font-semibold rounded shadow px-4 py-2 mt-6;
+}
+
+.random-fact {
+  @apply p-10 text-center;
+}
+
+.random-fact h2 {
+  @apply font-semibold text-3xl text-blue mb-5;
+}
+
+.random-fact p {
+  @apply text-xl;
+}
