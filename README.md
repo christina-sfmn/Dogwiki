@@ -1,1 +1,1 @@
-Dogwiki project page to practice fetching Data from APIs
+Dogwiki project page to practice fetching data from APIs
