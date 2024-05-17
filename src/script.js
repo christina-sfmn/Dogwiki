@@ -112,15 +112,24 @@ function showBreedInfo(breed, breeds, group, groups) {
   dogsContainer.classList.remove("breed-container");
   title.innerHTML = "";
 
+  // Check if dog is hypoallergenic
+  let hypoallergenicStatus;
+  if (breed.data.attributes.hypoallergenic === true) {
+    hypoallergenicStatus = "yes";
+  } 
+  if (breed.data.attributes.hypoallergenic === false) {
+    hypoallergenicStatus = "no";
+  }
+
   // Create content-elements for breed info
   const details = `
   <div class="dog">
         <p><span class="highlight">Name:</span> ${breed.data.attributes.name}</p>
         <p><span class="highlight">Description:</span> ${breed.data.attributes.description}</p>
-        <p><span class="highlight">Life:</span> max ${breed.data.attributes.life.max} years / min ${breed.data.attributes.life.min} years</p>
-        <p><span class="highlight">Hypoallergenic:</span> ${breed.data.attributes.hypoallergenic}</p>
-        <p><span class="highlight">Male weight:</span> max ${breed.data.attributes.male_weight.max} years / min ${breed.data.attributes.male_weight.min} years</p>
-        <p><span class="highlight">Female weight:</span> max ${breed.data.attributes.female_weight.max} years / min ${breed.data.attributes.female_weight.min} years</p>
+        <p><span class="highlight">Life:</span> max. ${breed.data.attributes.life.max} years / min. ${breed.data.attributes.life.min} years</p>
+        <p><span class="highlight">Hypoallergenic:</span> ${hypoallergenicStatus}</p>
+        <p><span class="highlight">Male weight:</span> max. ${breed.data.attributes.male_weight.max} years / min. ${breed.data.attributes.male_weight.min} years</p>
+        <p><span class="highlight">Female weight:</span> max. ${breed.data.attributes.female_weight.max} years / min. ${breed.data.attributes.female_weight.min} years</p>
         </div>
     `;
   dogsContainer.innerHTML = details;
