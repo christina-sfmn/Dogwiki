@@ -4,11 +4,13 @@ const btnBack = document.getElementById("btnBack");
 const title = document.getElementById("title");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
+const loading = `<div class="text-white font-semibold text-xl">Loading ...</div>`;
 
 // ---------- STANDARD FEATURES ----------
 
 // FETCH GROUPS
 function fetchGroup() {
+  dogsContainer.innerHTML = loading;
   fetch("https://dogapi.dog/api/v2/groups", { method: "GET" })
     .then((response) => response.json())
     .then((groups) => {
@@ -20,6 +22,8 @@ function fetchGroup() {
 
 // FETCH BREEDS
 function fetchBreeds(group, groups) {
+dogsContainer.innerHTML = loading;
+
   // Get IDs from breeds
   let breedIDs = group.relationships.breeds.data.map((breed) => breed.id);
 
